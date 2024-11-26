@@ -4,9 +4,9 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.imageContainer}>
-        <img src="src/assets/foto-header.jpg" alt="Imagem de fundo do cabeçalho" className={styles.headerImage} />
+        <img src="src/img/foto-header.jpg" alt="Imagem de fundo do cabeçalho" className={styles.headerImage} />
         <div className={styles.circleImageContainer}>
-          <img src="src/assets/foto-logo.jpg" alt="Imagem circular" className={styles.circleImage} />
+          <img src="src/img/foto-logo.jpg" alt="Imagem circular" className={styles.circleImage} />
         </div>
       </div>
       <div className={styles.headerContent}>
