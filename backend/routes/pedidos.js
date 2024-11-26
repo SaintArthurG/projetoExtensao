@@ -2,12 +2,10 @@ const express = require('express');
 const { Pedido } = require('../models');
 const router = express.Router();
 
-// Rota para criar um pedido
 router.post('/pedidos', async (req, res) => {
   try {
     const { arroz, feijao, nome, proteinas } = req.body;
 
-    // Criar um novo pedido no banco
     const novoPedido = await Pedido.create({
       arroz,
       feijao,

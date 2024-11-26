@@ -5,17 +5,15 @@ const { sequelize } = require('./models');
 
 const app = express();
 
-// Middleware
-app.use(bodyParser.json()); // Para interpretar o JSON enviado no corpo da requisição
+
+app.use(bodyParser.json()); 
 
 // Rota de pedidos
 app.use('/api', pedidosRoutes);
 
-// Iniciar o servidor
 app.listen(3001, async () => {
   console.log('Servidor rodando na porta 3001');
   
-  // Teste de conexão com o banco de dados
   try {
     await sequelize.authenticate();
     console.log('Conexão com o banco de dados estabelecida com sucesso.');
