@@ -1,6 +1,118 @@
+<<<<<<< HEAD
 .header{
     width: 100%;
     height: 50px;
     background-color: blue;
     color: #fff;
 }
+=======
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 300px; 
+  overflow: visible; 
+}
+
+
+.headerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transition: 0.3s ease; 
+}
+
+.imageContainer:hover .headerImage {
+  filter: brightness(70%); 
+}
+
+.circleImageContainer {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  background-color: white;
+  border-radius: 50%; 
+  overflow: hidden;
+  border: 3px solid white; 
+  z-index: 10; 
+}
+
+.circleImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.headerContent {
+  background-color: rgb(242, 242, 242); 
+  width: 100%;
+  max-width: 2000px;
+  padding: 40px 20px 10px; 
+  text-align: center;
+  position: relative;
+  z-index: 1; 
+  margin-top: -30px;
+
+  border-bottom: 2px solid black;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+ 
+  border-top: 2px solid black;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+  margin: 20px 0 0;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: center;
+  list-style: none; 
+  margin: 10px 0;
+  padding: 0;
+  gap: 40px;
+}
+
+.navLinks li {
+  margin: 0;
+}
+
+.navLinks li a {
+  text-decoration: none; 
+  color: black; 
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLinks li a:hover {
+  color: #ffcc00; 
+}
+
+.navLinks li a span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.navLinks li a:hover span {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .headerContent {
+    text-align: left;
+    padding: 40px 20px 10px;
+    margin-top: -30px;
+  }
+}
+
+>>>>>>> 692f35b (Mudança no Header)
