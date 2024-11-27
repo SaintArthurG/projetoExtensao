@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -5,11 +6,20 @@ const { Sequelize, DataTypes } = require('sequelize');
 
 // Configuração do Sequelize
 const sequelize = new Sequelize('pedido', 'root', 'pedro', {
+=======
+const { Sequelize, DataTypes } = require('sequelize');
+
+// Substitua esses dados com as credenciais do seu banco de dados
+const sequelize = new Sequelize('nome_do_banco', 'usuario', 'senha', {
+>>>>>>> aceea83 (Update 1)
   host: 'localhost',
   dialect: 'mysql',
 });
 
+<<<<<<< HEAD
 // Definição do modelo Pedido
+=======
+>>>>>>> aceea83 (Update 1)
 const Pedido = sequelize.define('Pedido', {
   arroz: {
     type: DataTypes.STRING,
@@ -29,11 +39,16 @@ const Pedido = sequelize.define('Pedido', {
   },
 });
 
+<<<<<<< HEAD
 // Sincronizar o banco de dados
+=======
+// Sincronizando o modelo com o banco de dados
+>>>>>>> aceea83 (Update 1)
 sequelize.sync()
   .then(() => console.log('Banco de dados conectado e modelo sincronizado'))
   .catch(err => console.log('Erro ao conectar ao banco:', err));
 
+<<<<<<< HEAD
 // Configuração do servidor Express
 const app = express();
 const PORT = 3001;
@@ -70,4 +85,6 @@ app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
 
+=======
+>>>>>>> aceea83 (Update 1)
 module.exports = { sequelize, Pedido };
