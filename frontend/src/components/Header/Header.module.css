@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-.header{
-    width: 100%;
-    height: 50px;
-    background-color: blue;
-    color: #fff;
-}
-=======
 .imageContainer {
   position: relative;
   width: 100%;
@@ -115,4 +107,3 @@
   }
 }
 
->>>>>>> 692f35b (Mudança no Header)
