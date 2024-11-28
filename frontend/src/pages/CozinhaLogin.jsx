@@ -1,18 +1,16 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import CozinhaLogin from "../components/CozinhaLogin";
 
-const Cozinha = () => {
-    return (  
-        
+const Pagina = () => {
+    return(
         <div>
             <Header/>
-            <div>
-                <H2>HELLO!WOLRD</H2>
-            </div>
+            <CozinhaLogin/>
             <Footer/>
         </div>
     )
 }
 
-export default Cozinha;
+export default Pagina;
