@@ -1,11 +1,12 @@
 
 import './App.css';
 import React, { useState } from 'react';
-import Header from './components/header';
+import Header from './components/Header';
 import Footer from './components/Footer';
 import FoodChoice from './components/FoodChoice';
 import OrderSummary from './components/OrderSummary';
 import axios from 'axios';
+import DivLogin from './components/CozinhaLogin';
 
 
 const App = () => {
@@ -27,7 +28,7 @@ const App = () => {
   };
 
   const handleNomeChange = (choice) => {
-    if (nome.includes(choice)){
+    if (nome.includes(choice)) {
       setNome(nome.filter(p => p !== choice));
     } else {
       setNome([...nome, choice]);
@@ -43,14 +44,13 @@ const App = () => {
     };
 
     try {
-      // Enviar o pedido para o back-end usando Axios
       const response = await axios.post('http://localhost:3001/api/pedidos', pedido);
       console.log('Pedido enviado com sucesso:', response.data);
       alert('Pedido enviado com sucesso!');
     } catch (error) {
       console.error('Erro ao enviar pedido:', error);
       alert('Erro ao enviar o pedido');
-    }  
+    }
 
     const pedidoJSON = JSON.stringify(pedido);
     console.log("Pedido em JSON:", pedidoJSON);
@@ -58,48 +58,46 @@ const App = () => {
 
 
   return (
-    
+
     <>
-      <Header/>
+      <Header />
       <div>
-      <h1>Faça o seu Pedido</h1>
-      <FoodChoice
-        title="Escolha o tipo de arroz"
-        options={['Arroz Branco', 'Arroz com pequi', 'Arroz integral']}
-        selected={arroz}
-        onChange={handleArrozChange}
-      />
+        <h1>Faça o seu Pedido</h1>
+        <FoodChoice
+          title="Escolha o tipo de arroz"
+          options={['Arroz Branco', 'Arroz com pequi', 'Arroz integral']}
+          selected={arroz}
+          onChange={handleArrozChange}
+        />
 
-      <FoodChoice
-      title={"Escolha o tipo de feijão"}
-      options={['Feijão Tropeiro', 'Feijão Preto com caldo']}
-      selected={feijao}
-      onChange={handleFeijaoChange}
-      />
+        <FoodChoice
+          title={"Escolha o tipo de feijão"}
+          options={['Feijão Tropeiro', 'Feijão Preto com caldo']}
+          selected={feijao}
+          onChange={handleFeijaoChange}
+        />
 
-      <FoodChoice
-      title={"Escolha as nome"}
-      options={['Batata Doce', 'Batata Palha', 'Batata Frita', 'Purê']}
-      selected={nome}
-      onChange={handleNomeChange}
-      multiSelect
-      />
-      
-      <FoodChoice
-        title="Escolha as proteínas"
-        options={['Frango', 'Carne', 'Linguiça']}
-        selected={proteinas}
-        onChange={handleProteinaChange}
-        multiSelect
-      />
+        <FoodChoice
+          title={"Escolha as nome"}
+          options={['Batata Doce', 'Batata Palha', 'Batata Frita', 'Purê']}
+          selected={nome}
+          onChange={handleNomeChange}
+          multiSelect
+        />
 
+        <FoodChoice
+          title="Escolha as proteínas"
+          options={['Frango', 'Carne', 'Linguiça']}
+          selected={proteinas}
+          onChange={handleProteinaChange}
+          multiSelect
+        />
 
+        <OrderSummary arroz={arroz} feijao={feijao} nome={nome} proteinas={proteinas} />
 
-      <OrderSummary arroz={arroz} feijao={feijao} nome={nome} proteinas={proteinas} />
-
-      <button onClick={handleSubmit}>Enviar Pedido</button>
-    </div>
-      <Footer/>
+        <button onClick={handleSubmit}>Enviar Pedido</button>
+      </div>
+      <Footer />
     </>
   )
 }
