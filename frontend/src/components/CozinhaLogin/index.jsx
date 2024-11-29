@@ -1,5 +1,7 @@
 import styles from "./CozinhaLogin.module.css"
 import React, { useState } from "react";
+import Cozinha from "../Cozinha";
+
 
 function CozinhaLogin () {
   
@@ -74,7 +76,13 @@ function CozinhaLogin () {
 
   return (
     <div className={styles.app}>
-      <h1>oi</h1>
+      <div className={styles.loginForm}>
+        <div className="title">Sign In</div>
+        {isSubmitted ? 
+        <div>
+          <Cozinha/>
+        </div> : renderForm}
+      </div>
     </div>
   );
 }

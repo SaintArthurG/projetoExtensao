@@ -1,0 +1,44 @@
+.container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .listItem {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .listItem p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .listItem strong {
+    color: #000;
+  }
+  
+  .listItem:nth-child(odd) {
+    background-color: #f5f5f5;
+  }
+  

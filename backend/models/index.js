@@ -3,7 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const { Sequelize, DataTypes, where } = require('sequelize');
 
-const sequelize = new Sequelize('pedido', 'root', '244554', {
+const sequelize = new Sequelize('pedido', 'root', 'pedro', {
   host: 'localhost',
   dialect: 'mysql',
 });
@@ -23,15 +23,6 @@ const Pedido = sequelize.define('Pedido', {
   },
   proteinas: {
     type: DataTypes.JSON,
-    allowNull: false,
-  },
-  username: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
-  },
-  password: {
-    type: DataTypes.STRING,
     allowNull: false,
   },
 
@@ -68,26 +59,6 @@ app.get('/api/pedidos', async (req, res) => {
   }
 });
 
-app.post('/login', async (req, res) => {
-  const {username, password} = req.body;
-
-  try{
-    const user = await Pedido.findOne({where:{username}});
-
-    if(!user) {
-      return res.status(404).json({error: 'Usuario nao encontrado'});
-    }
-
-    if(user.password !== password){
-      return res.status(401).json({error: 'Senha inválida'});
-    }
-
-    res.json({message: 'Login bem-sucedido!'});
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({error: 'Erro interno do servidor'});
-  }
-});
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
